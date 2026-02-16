@@ -1,1 +1,42 @@
+using System;
+
+namespace Octopie
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Octopus o = new Octopus("Jack", 5);
+            o.Introduce();
+
+            Console.ReadLine(); // Keeps console window open
+        }
+    }
+
+    class Octopus
+    {
+        // Readonly instance fields
+        public readonly string Name;
+        public readonly int Age;
+
+        // Readonly static field (shared by all octopuses)
+        public static readonly int Legs = 8;
+
+        // Constructor
+        public Octopus(string name, int age)
+        {
+            Name = name;
+            Age = age;
+        }
+
+        // Method to introduce the octopus
+        public void Introduce()
+        {
+            Console.WriteLine($"Hi, my name is {Name}.");
+            Console.WriteLine($"I am {Age} years old.");
+            Console.WriteLine($"I have {Legs} legs.");
+        }
+    }
+}
+
 
