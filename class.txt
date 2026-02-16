@@ -1,12 +1,12 @@
 using System;
 
-namespace Octopie
+namespace Module3Discussion 
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Octopus o = new Octopus("Jack", 5);
+            Octopus o = new Octopus("Tank", 5);
             o.Introduce();
 
             Console.ReadLine(); // Keeps console window open
