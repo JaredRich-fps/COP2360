@@ -1,1 +1,49 @@
+using System;
 
+namespace Module5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter the first number:");
+            string input1 = Console.ReadLine();
+
+            Console.WriteLine("Enter the second number:");
+            string input2 = Console.ReadLine();
+
+            try
+            {
+                int result = Divide(input1, input2);
+                Console.WriteLine("Result of division: " + result);
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Error: Please enter valid integer numbers.");
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("Error: You cannot divide by zero.");
+            }
+            catch (OverflowException)
+            {
+                Console.WriteLine("Error: The number entered is too large or too small.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Unexpected error: " + ex.Message);
+            }
+
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadKey();
+        }
+
+        static int Divide(string num1, string num2)
+        {
+            int number1 = Convert.ToInt32(num1);
+            int number2 = Convert.ToInt32(num2);
+
+            return number1 / number2;
+        }
+    }
+}
